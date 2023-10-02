@@ -1,2 +1,3 @@
+#Hi, where is your rest of the code, or you are working on that? thank you.
 g = 9.81
 SpringConstant = lambda m,x: (m*g)/x
