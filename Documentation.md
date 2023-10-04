@@ -7,3 +7,7 @@ Where:
 - x is the deformation or displacement of the spring from its equilibrium position, measured in meters (m).
 
 The negative sign indicates that the force exerted by the spring is in the opposite direction of the displacement.
+
+## References:
+1. [Hooke's Law](https://en.wikipedia.org/wiki/Hooke%27s_law)
+2. [ChatGPT](https://chat.openai.com/)
