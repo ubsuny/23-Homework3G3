@@ -1,0 +1,75 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOdyoG8+4lZM5mqfY+RtzH2",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/poojashresthacode/23-Homework3G3/blob/Add-another-function/corrected_spring_constant\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FPhYA_5cYFoX",
+        "outputId": "a7e7b5c9-acd8-42e1-89e7-29649a05f8d0"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The spring constant (k) for mass 20 g and extension 2.6 cm is approximately 7546.15 dyne/cm\n",
+            "The spring constant (k) for mass 40 g and extension 5.4 cm is approximately 7266.67 dyne/cm\n",
+            "The spring constant (k) for mass 60 g and extension 8.2 cm is approximately 7178.05 dyne/cm\n",
+            "The spring constant (k) for mass 80 g and extension 10.8 cm is approximately 7266.67 dyne/cm\n",
+            "The spring constant (k) for mass 100 g and extension 13.4 cm is approximately 7320.90 dyne/cm\n",
+            "The spring constant (k) for mass 120 g and extension 16.1 cm is approximately 7311.80 dyne/cm\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# Value of acceleration due to gravity in cm/s^2\n",
+        "g = 981\n",
+        "\n",
+        "# Given data (mass in grams and extension in centimeters)\n",
+        "m = np.array([20, 40, 60, 80, 100, 120])  # Masses in grams\n",
+        "x = np.array([2.6, 5.4, 8.2, 10.8, 13.4, 16.1])  # Extensions in cm\n",
+        "\n",
+        "# Define a lambda function to calculate spring constant\n",
+        "spring_constant = lambda m, x: (m * g) / x\n",
+        "\n",
+        "# Use the map function to calculate spring constants for all pairs of m and x\n",
+        "spring_constants = list(map(spring_constant, m, x))\n",
+        "\n",
+        "# Printing the spring constants\n",
+        "for i, k in enumerate(spring_constants):\n",
+        "    print(f\"The spring constant (k) for mass {m[i]} g and extension {x[i]} cm is approximately {k:.2f} dyne/cm\")\n"
+      ]
+    }
+  ]
+}
