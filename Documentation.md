@@ -26,9 +26,11 @@ By applying this formula to each mass-extension pair, we obtain a set of spring 
 
 on average we obtain 7298.34 dyne/cm as a spring constant.
 
-Hooke's Law Validation:
+## Hooke's Law Validation:
 
-We aim to validate Hooke's law, which predicts that the relationship between mass and elongation should yield a straight line on a graph. In our case, we plot a graph of mass (in grams) vs. extension (in centimeters).
+We aim to validate Hooke's law, which predicts that the relationship between mass and elongation should yield a straight line on a graph. In our case, we plot a graph of mass (in grams) vs. elongation (in centimeters).
+![best-fit-graph](https://github.com/s4il3sh/23-Homework3G3/assets/144289804/b1679bd9-b539-4450-a299-54aed1d31e3a)
+
 
 
 
