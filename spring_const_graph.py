@@ -33,7 +33,7 @@ spring_constant = lambda m,x: "ERROR" if x == 0 or m<0 else (m*g)/x
     test_values = map(spring_constant, masses, elongations)
     spring_constants = list(test_values)
     
-    avg = np.average(spring_constants)*10**(-5)
+    avg = np.average(spring_constants)*10**(-3)
     output = print("The spring constant of a given spring is", '{:.2e}'.format(float(avg)), "N/m")
     return output 
 
