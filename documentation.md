@@ -143,6 +143,132 @@ def plot_mass_vs_extension_with_trendline(masses, elongations):
     # Show the plot
     plt.show()
 ```
+## Output from pycodestyle
+```python
+%reload_ext pycodestyle_magic
+```
+
+
+```python
+%%pycodestyle
+
+import spring_const_graph as scg
+
+# Example data
+masses = [20, 40, 60, 80, 100, 120]  # Masses in grams
+positions = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1] # Extensions in cm
+elongations = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1]  # Extensions in cm
+
+scg.plot_mass_vs_extension_with_trendline(masses, elongations)
+scg.calculate_spring_constants(masses, elongations)
+```
+
+    7:46: E261 at least two spaces before inline comment
+    12:1: W391 blank line at end of file
+
+
+
+```python
+%%pycodestyle
+
+def calculate_spring_constants(masses, elongations):
+    """
+    Calculate spring constants from mass and extension data.
+#Calculation of spring constant
+spring_constant = lambda m,x: "ERROR" if x == 0 or m<0 else (m*g)/x
+    This function calculates spring constants using the provided mass and extension data and
+    the formula (mass * acceleration due to gravity) / extension.
+# Given data (mass in grams and extension in centimeters)
+    Parameters:
+        masses (list): A list of masses (in grams) placed on the spring.
+        elongations (list): A list of extensions (in centimeters) of the spring from its equilibrium position.
+    Returns:
+        list: A list of calculated spring constants.
+    Note:
+        The function assumes that the value of 'g' is approximately 981 cm/s^2.
+        If an extension is zero or the mass is negative, "ERROR" is returned for the corresponding spring constant.
+    Example:
+        masses = [20, 40, 60, 80, 100, 120]  # Masses in grams
+        elongations = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1]  # Extensions in cm
+        spring_constants = calculate_spring_constants(masses, elongations)
+        # spring_constants will contain the calculated spring constants.
+    """
+    # Value of acceleration due to gravity in cm/s^2
+    g = 981
+
+    # Calculation of spring constant
+    spring_constant = lambda m, x: "ERROR" if x == 0 or m < 0 else (m * g) / x
+
+    # Calculate spring constants
+    test_values = map(spring_constant, masses, elongations)
+    spring_constants = list(test_values)
+
+    return spring_constants
+
+def plot_mass_vs_extension_with_trendline(masses, elongations):
+    """
+    Plot a graph of mass vs. extension with a best-fit trendline.
+
+    This function takes experimental data in the form of masses (in grams) and extensions (in centimeters)
+    and creates a scatter plot representing the relationship between mass and extension.
+    Additionally, it adds a best-fit trendline to the plot.
+
+    Parameters:
+        masses_g (list): A list of experimental masses in grams.
+        extensions_cm (list): A list of experimental extensions in centimeters.
+
+    Returns:
+        None
+
+    Example:
+        # Experimental data
+        masses = [20, 40, 60, 80, 100, 120]  # Masses in grams
+        extensions = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1]  # Extensions in cm
+
+        # Plot mass vs. extension with a best-fit trendline
+        plot_mass_vs_extension_with_trendline(masses, extensions)
+
+    Note:
+        This function uses the matplotlib library for creating the plot.
+        The 'masses_g' and 'extensions_cm' parameters should represent experimental data
+        with masses in grams and extensions in centimeters.
+    """
+    # Fit a linear trendline
+    slope, intercept = np.polyfit(masses, elongations, 1)
+
+    # Create a scatter plot of mass vs. extension
+    plt.figure(figsize=(8, 6))
+    plt.scatter(masses, elongations, color='blue', marker='o', label='Data Points')
+
+    # Plot the best-fit line
+    plt.plot(masses, slope * np.array(masses) + intercept, color='red', label='Best-fit Line')
+
+    # Set plot labels and title
+    plt.title('Mass vs. Elongation')
+    plt.xlabel('Mass (g)')
+    plt.ylabel('Elongation (cm)')
+    plt.grid(True)
+    plt.legend()
+
+    # Display the equation of the best-fit line
+    plt.text(0.5, 0.5, f'Equation: y = {slope:.4f}x + {intercept:.4f}', transform=plt.gca().transAxes)
+
+    # Show the plot
+    plt.show()
+```
+
+    8:80: E501 line too long (92 > 79 characters)
+    13:80: E501 line too long (110 > 79 characters)
+    18:80: E501 line too long (115 > 79 characters)
+    29:5: E731 do not assign a lambda expression, use a def
+    37:1: E302 expected 2 blank lines, found 1
+    41:80: E501 line too long (106 > 79 characters)
+    42:80: E501 line too long (88 > 79 characters)
+    62:80: E501 line too long (88 > 79 characters)
+    70:80: E501 line too long (83 > 79 characters)
+    73:80: E501 line too long (94 > 79 characters)
+    83:80: E501 line too long (102 > 79 characters)
+    87:1: W391 blank line at end of file
 
 ### References:
 1. [Hooke's Law](https://en.wikipedia.org/wiki/Hooke%27s_law)
