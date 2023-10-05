@@ -8,7 +8,7 @@ Where:
 
 The negative sign indicates that the force exerted by the spring is in the opposite direction of the displacement.
 
-## <ins>Experiment Overview:</ins>
+## <ins>Experimental Overview:</ins>
 In this experiment, we use a spring to investigate the relationship between mass and extension, aiming to determine the spring constants and validate Hooke's law.
 
 We placed various masses on the spring and noted its elongations. We collected experimental data with two main variables:
