@@ -22,7 +22,7 @@ $$k = \frac{mg}{x}$$
 By applying this formula to each mass-extension pair, we obtain a set of spring constants.
 ​After analyzing the experimental data, we calculate the spring constants, resulting in values such as:
 
-7546.15,7266.67,7178.05,7266.67,7320.90,7311.80 dyne/cm
+7546.15,7266.67,7178.05,7266.67,7320.90,7311.80 dyne/cm which is 7.31 N/m.
 
 on average we obtain 7298.34 dyne/cm as a spring constant.
 
