@@ -6,4 +6,5 @@ positions = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1] # Extensions in cm
 elongations = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1]  # Extensions in cm
 
 scg.plot_mass_vs_extension_with_trendline(masses, elongations)
-scg.calculate_spring_constants(masses, elongations)
+print("The spring constant of a given spring is", \
+      '{:.2e}'.format(float(scg.calculate_spring_constants(masses, elongations))), "N/m")
