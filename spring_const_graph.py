@@ -1,11 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Experimental data
-masses = [20, 40, 60, 80, 100, 120]  # Masses in grams
-positions = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1] # Extensions in cm
-elongations = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1]  # Extensions in cm
-
 def calculate_spring_constants(masses, elongations):
     """
     Calculate spring constants from mass and extension data.
@@ -37,36 +32,32 @@ spring_constant = lambda m,x: "ERROR" if x == 0 or m<0 else (m*g)/x
     # Calculate spring constants
     test_values = map(spring_constant, masses, elongations)
     spring_constants = list(test_values)
+    
+    avg = np.average(spring_constants)*10**(-3)
+    return avg 
 
-    return spring_constants
-
-def plot_mass_vs_extension_with_trendline(masses, elongations):
-    """
-    Plot a graph of mass vs. extension with a best-fit trendline.
-
-    This function takes experimental data in the form of masses (in grams) and extensions (in centimeters)
-    and creates a scatter plot representing the relationship between mass and extension.
-    Additionally, it adds a best-fit trendline to the plot.
+def plot_mass_vs_extension_with_trendline(masses, elongations, file_name=None):
+      """
+    Generate a scatter plot of mass vs. elongation with a best-fit trendline.
 
     Parameters:
-        masses_g (list): A list of experimental masses in grams.
-        extensions_cm (list): A list of experimental extensions in centimeters.
+        masses (list): A list of mass values (in grams).
+        elongations (list): A list of elongation values (in centimeters).
+        file_name (str, optional): The filename to save the plot as an image. \
+        If not provided, the plot is displayed but not saved.
 
     Returns:
         None
 
-    Example:
-        # Experimental data
-        masses = [20, 40, 60, 80, 100, 120]  # Masses in grams
-        extensions = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1]  # Extensions in cm
+    This function fits a linear trendline to the provided mass and elongation data \
+    points and creates a scatter plot of the data points along with the best-fit line. \
+    It also labels the axes, displays a title, and shows the equation of the best-fit line \
+    on the plot. Additionally, it can save the plot as an image if a filename is provided.
 
-        # Plot mass vs. extension with a best-fit trendline
-        plot_mass_vs_extension_with_trendline(masses, extensions)
-
-    Note:
-        This function uses the matplotlib library for creating the plot.
-        The 'masses_g' and 'extensions_cm' parameters should represent experimental data
-        with masses in grams and extensions in centimeters.
+    Example usage:
+    >>> masses = [1, 2, 3, 4, 5]
+    >>> elongations = [2, 4, 5, 4, 6]
+    >>> plot_mass_vs_extension_with_trendline(masses, elongations, file_name='mass_vs_extension.png')
     """
     # Fit a linear trendline
     slope, intercept = np.polyfit(masses, elongations, 1)
@@ -88,16 +79,9 @@ def plot_mass_vs_extension_with_trendline(masses, elongations):
     # Display the equation of the best-fit line
     plt.text(0.5, 0.5, f'Equation: y = {slope:.4f}x + {intercept:.4f}', transform=plt.gca().transAxes)
 
+    # Save the plot as an image if a filename is provided
+    if file_name:
+        plt.savefig(file_name)
+        
     # Show the plot
     plt.show()
-
-#Printing outputs
-
-# Plot mass vs. extension with a best-fit trendline using the provided function
-plot_mass_vs_extension_with_trendline(masses, elongations)
-
-# Calculate spring constants using the provided function
-spring_constants = calculate_spring_constants(masses, elongations)
-
-avg = np.average(spring_constants)
-print(f"The spring constant of a given spring is {avg:.2f} dyne/cm")
