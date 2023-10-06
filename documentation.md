@@ -22,9 +22,7 @@ $$k = \frac{mg}{x}$$
 By applying this formula to each mass-extension pair, we obtain a set of spring constants.
 ​After analyzing the experimental data, we calculate the spring constants, resulting in values such as:
 
-7546.15,7266.67,7178.05,7266.67,7320.90,7311.80 dyne/cm which is 7.31 N/m.
-
-on average we obtain 7298.34 dyne/cm as a spring constant.
+7.55.15,7.27,7.18,7.23,7.32,7.31 N/m which in 7.32 N/m on average.
 
 ## <ins>Hooke's Law Validation:</ins>
 
@@ -36,8 +34,23 @@ We aim to validate Hooke's law, which predicts that the relationship between mas
 - We plotted the graph using Matplotlib and drew a best-fit line using polyfit from the numpy library.
 - We separated our algorithm and created a file named - python spring_const_graph.py
 - Also, we made main_run.py using our own modules (spring_const_graph.py) and ran the file using our experimental data into it.
-  
-Here is the code and output of pycodestyle main.py file.
+
+### (i) lambda function, list, and map
+We use lambda function mass (m) and elongation (x) as inputs to determine the spring constant (k). Also, we used list and map to obtain all the values of spring constants for respective masses.
+
+### (ii) New module created
+We created a new module named sping_const_graph.py that contains two functions - calculate_spring_constants() and plot_mass_vs_extension_with_trendline(). 
+
+#### a. calculate_spring_constants()
+This is the main function that integrates the lambda function. It takes two inputs -- masses and elongations and returns spring constants of respective masses.
+
+#### b. plot_mass_vs_extension_with_trendline()
+This function also takes two inputs -- masses and elongations and creates a scatter plot representing the relationship between mass and elongation. Additionally, it adds a best-fit trendline to the plot.
+
+### New python file created
+The file (main.py) uses the created module spring_const_graph and imports it to run our given data and gives us the output i.e. spring constant and a graph showing the relation between mass and its respective elongation.
+
+### Output of pycodestyle main.py file
 ```python
 %reload_ext pycodestyle_magic
 ```
@@ -60,7 +73,7 @@ scg.calculate_spring_constants(masses, elongations)
     7:46: E261 at least two spaces before inline comment
     12:1: W391 blank line at end of file
 
-Here is the code and output of pycodestyle spring_const_graph.py file.
+### Output of pycodestyle spring_const_graph.py file
 ```python
 %%pycodestyle
 
