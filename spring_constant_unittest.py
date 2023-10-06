@@ -20,7 +20,7 @@ class SpringConstantTest(unittest.TestCase):
 
     self.assertEqual(expected_spring_constant, actual_spring_constant)
 
-  ddef test_spring_constant_with_zero_mass(self):
+  def test_spring_constant_with_zero_mass(self):
     """Tests the spring_constant function with a zero mass."""
 
     mass = [0.0]  # kilograms
