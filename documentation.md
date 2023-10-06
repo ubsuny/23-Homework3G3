@@ -45,7 +45,7 @@ We created a new module named sping_const_graph.py that contains two functions -
 This is the main function that integrates the lambda function. It takes two inputs -- masses and elongations and returns spring constants of respective masses.
 
 #### b. plot_mass_vs_extension_with_trendline()
-This function also takes two inputs -- masses and elongations and creates a scatter plot representing the relationship between mass and elongation. Additionally, it adds a best-fit trendline to the plot.
+This function also takes three arguments -- masses, elongations, and file_name and creates a scatter plot representing the relationship between mass and elongation. Additionally, it adds a best-fit trendline to the plot while also saving the plot as file_name.png. The default extension of saving picture is .png.
 
 ### New python file created
 The file (main.py) uses the created module spring_const_graph and imports it to run our given data and gives us the output i.e. spring constant and a graph showing the relation between mass and its respective elongation.
@@ -66,8 +66,9 @@ masses = [20, 40, 60, 80, 100, 120]  # Masses in grams
 positions = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1] # Extensions in cm
 elongations = [2.6, 5.4, 8.2, 10.8, 13.4, 16.1]  # Extensions in cm
 
-scg.plot_mass_vs_extension_with_trendline(masses, elongations)
-scg.calculate_spring_constants(masses, elongations)
+scg.plot_mass_vs_extension_with_trendline(masses, elongations, 'best-fit.png')
+print("The spring constant of a given spring is", \
+      '{:.2e}'.format(float(scg.calculate_spring_constants(masses, elongations))), "N/m")
 ```
 
     7:46: E261 at least two spaces before inline comment
