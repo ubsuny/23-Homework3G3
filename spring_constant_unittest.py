@@ -1,3 +1,8 @@
+#This unit test tests the cases of a spring constant with a known (real) value,
+#as well as the two main cases that would give errors/non physical results
+#(zero mass and zero displacement.) This should cover all possible
+#use cases of the function.
+
 import unittest
 
 class SpringConstantTest(unittest.TestCase):
