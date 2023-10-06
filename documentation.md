@@ -22,7 +22,7 @@ $$k = \frac{mg}{x}$$
 By applying this formula to each mass-extension pair, we obtain a set of spring constants.
 ​After analyzing the experimental data, we calculate the spring constants, resulting in values such as:
 
-7.55.15,7.27,7.18,7.23,7.32,7.31 N/m which in 7.32 N/m on average.
+7.55.15,7.27,7.18,7.23,7.32,7.31 N/m which is 7.32 N/m on average.
 
 ## <ins>Hooke's Law Validation:</ins>
 
@@ -31,12 +31,12 @@ We aim to validate Hooke's law, which predicts that the relationship between mas
 
 ## <ins>Computational Work</ins>
 - We used the lambda function along with map and list concepts to calculate the spring constants from the given data of masses and elongation.
-- We plotted the graph using Matplotlib and drew a best-fit line using polyfit from the numpy library.
+- We plotted the graph using Matplotlib and drew a best-fit line using polyfit from the NumPy library.
 - We separated our algorithm and created a file named - python spring_const_graph.py
 - Also, we made main.py using our own modules (spring_const_graph.py) and ran the file using our experimental data into it.
 
 ### (i) lambda function, list, and map
-We use lambda function mass (m) and elongation (x) as inputs to determine the spring constant (k). Also, we used list and map to obtain all the values of spring constants for respective masses.
+We use lambda function mass (m) and elongation (x) as inputs to determine the spring constant (k). Also, we used a list and map to obtain all the values of spring constants for respective masses.
 
 ### (ii) New module created
 We created a new module named sping_const_graph.py that contains two functions - calculate_spring_constants() and plot_mass_vs_extension_with_trendline(). 
