@@ -33,7 +33,7 @@ We aim to validate Hooke's law, which predicts that the relationship between mas
 - We used the lambda function along with map and list concepts to calculate the spring constants from the given data of masses and elongation.
 - We plotted the graph using Matplotlib and drew a best-fit line using polyfit from the numpy library.
 - We separated our algorithm and created a file named - python spring_const_graph.py
-- Also, we made main_run.py using our own modules (spring_const_graph.py) and ran the file using our experimental data into it.
+- Also, we made main.py using our own modules (spring_const_graph.py) and ran the file using our experimental data into it.
 
 ### (i) lambda function, list, and map
 We use lambda function mass (m) and elongation (x) as inputs to determine the spring constant (k). Also, we used list and map to obtain all the values of spring constants for respective masses.
