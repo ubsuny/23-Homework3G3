@@ -30,25 +30,25 @@ We aim to validate Hooke's law, which predicts that the relationship between mas
 ![best-fit-graph](https://github.com/s4il3sh/23-Homework3G3/assets/144289804/b1679bd9-b539-4450-a299-54aed1d31e3a)
 
 ## <ins>Computational Work</ins>
-- We used the lambda function along with map and list concepts to calculate the spring constants from the given data of masses and elongation.
-- We plotted the graph using Matplotlib and drew a best-fit line using polyfit from the NumPy library.
-- We separated our algorithm and created a file named - python spring_const_graph.py
-- Also, we made main.py using our own modules (spring_const_graph.py) and ran the file using our experimental data into it.
+- We used the `lambda` function along with `map` and `list` concepts to calculate the spring constants from the given data of masses and elongation.
+- We plotted the graph using `Matplotlib` and drew a best-fit line using `polyfit` from the `NumPy` library.
+- We separated our algorithm and created a file named - `python spring_const_graph.py`
+- Also, we made `main.py` using our own modules (`spring_const_graph.py`) and ran the file using our experimental data into it.
 
 ### (i) lambda function, list, and map
-We use lambda function mass (m) and elongation (x) as inputs to determine the spring constant (k). Also, we used a list and map to obtain all the values of spring constants for respective masses.
+We use `lambda` function mass (m) and elongation (x) as inputs to determine the spring constant (k). Also, we used a `list` and `map` to obtain all the values of spring constants for respective masses.
 
 ### (ii) New module created
-We created a new module named sping_const_graph.py that contains two functions - calculate_spring_constants() and plot_mass_vs_extension_with_trendline(). 
+We created a new module named `sping_const_graph.py` that contains two functions - `calculate_spring_constants()` and `plot_mass_vs_extension_with_trendline()`. 
 
 #### a. calculate_spring_constants()
-This is the main function that integrates the lambda function. It takes two inputs -- masses and elongations and returns spring constants of respective masses.
+This is the main function that integrates the `lambda` function. It takes two inputs -- masses and elongations and returns spring constants of respective masses.
 
 #### b. plot_mass_vs_extension_with_trendline()
 This function also takes three arguments -- masses, elongations, and file_name and creates a scatter plot representing the relationship between mass and elongation. Additionally, it adds a best-fit trendline to the plot while also saving the plot as file_name.png. The default extension of saving picture is .png.
 
 ### New python file created
-The file (main.py) uses the created module spring_const_graph and imports it to run our given data and gives us the output i.e. spring constant and a graph showing the relation between mass and its respective elongation.
+The file (`main.py`) uses the created module spring_const_graph and imports it to run our given data and gives us the output i.e. spring constant and a graph showing the relation between mass and its respective elongation.
 
 ### Output of pycodestyle main.py file
 ```python
