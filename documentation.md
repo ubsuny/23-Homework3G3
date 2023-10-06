@@ -186,7 +186,7 @@ def plot_mass_vs_extension_with_trendline(masses, elongations):
     92:1: W391 blank line at end of file
     
 ## <ins>References:</ins>
-1. [Hooke's Law](https://en.wikipedia.org/wiki/Hooke%27s_law)
+1. [Hooke's Law from Wikipedia](https://en.wikipedia.org/wiki/Hooke%27s_law)
 2. [Tutorial from Python](https://docs.python.org/3/tutorial/)
 3. [ChatGPT](https://chat.openai.com/)
 4. [Bard](https://bard.google.com)
